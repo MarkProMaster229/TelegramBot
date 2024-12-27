@@ -1,0 +1,10 @@
+{
+    "Admin": {
+        "password": "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4",
+        "role": "admin"
+    },
+    "ttt": {
+        "password": "4e07408562bedb8b60ce05c1decfe3ad16b72230967de01f640b7e4729b49fce",
+        "role": "teacher"
+    }
+}
