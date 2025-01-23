@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42058b1e-3fe5-4f16-9e28-b140b31dbad2" name="Changes" comment="" />
+    <list default="true" id="42058b1e-3fe5-4f16-9e28-b140b31dbad2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +18,9 @@
         <option value="Python Script" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.venv/Scripts/main.py" root0="FORCE_HIGHLIGHTING" />
@@ -29,26 +34,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.AttendanceAnalyzer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TeacherNotifier.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TopicCheck.executor&quot;: &quot;Run&quot;,
-    &quot;Python.chekingListTema.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.personalaccount.executor&quot;: &quot;Run&quot;,
-    &quot;Python.python check_columns.executor&quot;: &quot;Run&quot;,
-    &quot;Python.studentsGrups.executor&quot;: &quot;Run&quot;,
-    &quot;Python.topic_check.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.reader.mode&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.AttendanceAnalyzer.executor": "Run",
+    "Python.TeacherNotifier.executor": "Run",
+    "Python.TopicCheck.executor": "Run",
+    "Python.chekingListTema.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.personalaccount.executor": "Run",
+    "Python.python check_columns.executor": "Run",
+    "Python.studentsGrups.executor": "Run",
+    "Python.topic_check.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;Python&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Python"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="TopicCheck" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="myproekt" />
