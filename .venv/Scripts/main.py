@@ -7,6 +7,8 @@ from TopicCheck import TopicCheck  # Импортируем класс TopicChec
 from TeacherNotifier import TeacherNotifier
 from AttendanceAnalyzer import AttendanceAnalyzer
 from AttendanceAnalyzer import EmailSender
+from StudentAnalyzer import StudentAnalyzer
+
 
 def mainRealization():
     chatBot = studentsGrups('7576176164:AAHwRUHD2sr8CVg5lW52bC0bNLElkhjXcvU')
@@ -240,6 +242,65 @@ def mainRealization():
 
         except Exception as e:
             print(f"Ошибка: {e}")
+
+    @chatBot.bot.message_handler(commands=['analyze_students'])
+    def analyze_students(message):
+        try:
+            # Путь к отчету
+            file_path = 'C:\\Users\\chelovek\\Desktop\\run\\Отчет по студентам.xlsx'
+            analyzer = StudentAnalyzer(file_path)
+
+            # Загрузка данных
+            analyzer.load_data()
+            low_grade_students = analyzer.analyze_grades()
+
+            # Разделяем студентов на две группы
+            students_with_zero_grades = low_grade_students[low_grade_students['Average score'] == 0]
+            students_with_low_grades = low_grade_students[
+                (low_grade_students['Average score'] > 0) & (low_grade_students['Average score'] < 3)
+                ]
+
+            # Формируем сообщения
+            response_parts = []
+
+            if not students_with_low_grades.empty:
+                part = "Студенты с низким средним баллом (меньше 3):\n"
+                part += "\n".join(
+                    f"{row['FIO']}: {row['Average score']:.2f}"
+                    for _, row in students_with_low_grades.iterrows()
+                )
+                response_parts.append(part)
+
+            if not students_with_zero_grades.empty:
+                part = "Студенты с нулевым средним баллом (у этих студентов ноль):\n"
+                part += "\n".join(
+                    f"{row['FIO']}: {row['Average score']:.2f}"
+                    for _, row in students_with_zero_grades.iterrows()
+                )
+                response_parts.append(part)
+
+            # Если ни одна из групп не заполнена
+            if not response_parts:
+                chatBot.bot.send_message(message.chat.id, "У всех студентов средний балл выше или равен 3.")
+                return
+
+            # Отправка ответа частями, если он слишком длинный
+            for part in response_parts:
+                while len(part) > 4096:
+                    # Обрезаем сообщение до 4096 символов
+                    chunk = part[:4096]
+                    part = part[4096:]
+                    chatBot.bot.send_message(message.chat.id, chunk)
+
+                # Отправляем оставшуюся часть
+                chatBot.bot.send_message(message.chat.id, part)
+
+        except FileNotFoundError:
+            chatBot.bot.send_message(message.chat.id, "Файл с отчетом не найден. Проверьте путь к файлу.")
+        except KeyError as e:
+            chatBot.bot.send_message(message.chat.id, f"Ошибка: отсутствует столбец {str(e)} в отчете.")
+        except Exception as e:
+            chatBot.bot.send_message(message.chat.id, f"Ошибка: {str(e)}")
 
     # Начинаем работу бота
     chatBot.bot.polling(none_stop=True)
