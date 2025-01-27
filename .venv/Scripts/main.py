@@ -200,7 +200,7 @@ def mainRealization():
         except Exception as e:
             chatBot.bot.send_message(message.chat.id, f"Ошибка при отправке уведомлений: {str(e)}")
 
-    @chatBot.bot.message_handler(commands=['teacherDZ'])
+    @chatBot.bot.message_handler(commands=['check_topic'])
     def teacher_dz(message):
         try:
             # Создаем экземпляр класса TopicCheck и вызываем метод topic
@@ -226,7 +226,7 @@ def mainRealization():
 
             # Отправляем пользователю количество студентов и их данные
             chatBot.bot.send_message(message.chat.id,
-                                     f"Количество студентов с оценкой ниже 4: {count}\n\nСтуденты:\n{student_data}")
+                                     f"Количество студентов с оценкой ниже 3: {count}\n\nСтуденты:\n{student_data}")
 
     # Начинаем работу бота
     chatBot.bot.polling(none_stop=True)

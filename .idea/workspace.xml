@@ -4,14 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42058b1e-3fe5-4f16-9e28-b140b31dbad2" name="Changes" comment="последний">
+    <list default="true" id="42058b1e-3fe5-4f16-9e28-b140b31dbad2" name="Changes" comment="исправление_багов">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/AttendanceAnalyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/AttendanceAnalyzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/StudentAnalyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/StudentAnalyzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/TeacherNotifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/TeacherNotifier.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/TopicCheck.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/TopicCheck.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/personalaccount.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/personalaccount.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +23,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="финальная-ветка" />
+        <entry key="$PROJECT_DIR$" value="финальная-ветка(исправление_багов_важно)" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,7 +68,7 @@
     "Python.studentsGrups.executor": "Run",
     "Python.topic_check.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "финальная-ветка(исправление__багов__важно)",
+    "git-widget-placeholder": "финальная-ветка2(исправление__багов__важно2)",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   },
   "keyToStringList": {
@@ -82,6 +77,11 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chelovek\Desktop\myproekt" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="TopicCheck" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="myproekt" />
@@ -158,11 +158,20 @@
       <option name="project" value="LOCAL" />
       <updated>1737757932153</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="исправление_багов">
+      <option name="closed" value="true" />
+      <created>1738003041419</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1738003041419</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="последний" />
-    <option name="LAST_COMMIT_MESSAGE" value="последний" />
+    <MESSAGE value="исправление_багов" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправление_багов" />
   </component>
 </project>
