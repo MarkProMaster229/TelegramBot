@@ -1,47 +1,48 @@
 import pandas as pd
+import json
 
 class StudentAnalyzer:
     def __init__(self, file_path):
         self.file_path = file_path
-
-    def load_data(self):
+        self.studentSlowar = {}
         try:
-            self.data = pd.read_excel(self.file_path)
-            return self.data
+            # Пытаемся загрузить данные из Excel
+            self.data = pd.read_excel(file_path)
         except Exception as e:
-            raise ValueError(f"Ошибка при загрузке файла: {str(e)}")
+            print(f"Ошибка при загрузке файла: {e}")
+            self.data = None  # Если ошибка
 
-    def convert_to_5_scale(self):
-        if 'Average score' not in self.data.columns:
-            raise ValueError("Отсутствует столбец 'Average score' для конвертации.")
+    def analiz(self):
+        if self.data is None:
+            print("Данные не загружены, завершение работы.")
+            return 0
 
-        # Преобразуем значения '-' в 0 и остальные значения в float
-        self.data['Average score'] = self.data['Average score'].apply(lambda x: 0 if x == '-' else float(x))
-
-        # Конвертируем оценки в 5-балльную систему
-        def convert_to_5_scale(score):
-            if score <= 3:
-                return 2
-            elif score <= 6:
-                return 3
-            elif score <= 9:
-                return 4
-            else:
-                return 5
-
-        self.data['Converted Score'] = self.data['Average score'].apply(convert_to_5_scale)
-
-    def analyze_grades(self, threshold=3):
+        count = 0
         try:
-            # Проверяем наличие необходимых столбцов
-            required_columns = ['FIO', 'Converted Score']
-            for column in required_columns:
-                if column not in self.data.columns:
-                    raise ValueError(f"Отсутствует столбец '{column}' в файле.")
+            # Проверяем, существует ли столбец
+            if 'Average score' not in self.data.columns:
+                print("Столбец 'Average score' не найден.")
+                return 0
 
-            # Отбираем студентов с низким средним баллом
-            low_grade_students = self.data[self.data['Converted Score'] < threshold]
+            # Преобразуем столбец Average score в числовой формат
+            self.data['Average score'] = pd.to_numeric(self.data['Average score'], errors='coerce')
 
-            return low_grade_students
+            # Фильтруем строки, где Average score не является NaN
+            for index, row in self.data.iterrows():
+                score = row['Average score']
+                fio = row['FIO']
+                if pd.notna(score) and score < 4 and score != 0:
+                    self.studentSlowar[fio] = 2 #очевидно же что у всех кто там будет будет 2,
+                    # если вывод будет три как в таблице это будет странно ведь работа идет с 5- и бальной системой
+                    count += 1
+
+            # Сохраняем данные в джейсон
+            with open('studentSlowar.json', 'w', encoding='utf-8') as f:
+                json.dump(self.studentSlowar, f, ensure_ascii=False, indent=4)
+
+            print(f"Количество студентов с оценкой ниже 3: {count}")
+            return count
+
         except Exception as e:
-            raise ValueError(f"Ошибка при анализе данных: {str(e)}")
+            print(f"Ошибка при анализе данных: {e}")
+            return 0

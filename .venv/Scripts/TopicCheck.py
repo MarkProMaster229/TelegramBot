@@ -39,7 +39,7 @@ class TopicCheck:
                 # Получаем Telegram ID преподавателя
                 teacher_id = teachers.get(prepodavatel)
 
-                # Если ID найден, отправляем сообщение
+                # Если ID найден отправляем сообщение
                 if teacher_id:
                     message = (
                         f"Уважаемый(ая) {prepodavatel}, у вас некорректно заполнена тема урока.\n\n"
@@ -48,7 +48,6 @@ class TopicCheck:
                     )
                     bot.send_message(teacher_id, message)
                 else:
-                    # Если ID не найден
                     print(f"ID для преподавателя {prepodavatel} не найден. Уведомление не отправлено.")
             else:
                 print(f"Преподаватель {prepodavatel}: Строка {i + 1} верна: {tema}")

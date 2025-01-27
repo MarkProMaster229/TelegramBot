@@ -11,7 +11,7 @@ class AttendanceAnalyzer:
 
     def analyze(self):
         try:
-            # Загружаем данные из Excel
+
             data = pd.read_excel(self.file_path)
 
             # Проверяем наличие нужных столбцов
@@ -20,7 +20,7 @@ class AttendanceAnalyzer:
                 if col not in data.columns:
                     raise ValueError(f"Не найден столбец: {col}")
 
-            # Убираем символ '%' из столбца 'Средняя посещаемость' и преобразуем в числовой формат
+            # проблема с %
             data['Средняя посещаемость'] = data['Средняя посещаемость'].replace('%', '', regex=True).astype(float)
 
             # Фильтруем данные с посещаемостью ниже заданного порога
@@ -41,8 +41,8 @@ class EmailSender:
         try:
             # Настраиваем SMTP-сервер для hMailServer
             print("Подключение к SMTP-серверу...")
-            server = smtplib.SMTP('localhost', 25)  # Используйте 587, если настроили TLS
-            # server.starttls()  # Раскомментируйте, если используете TLS
+            server = smtplib.SMTP('localhost', 25)
+            # server.starttls()
 
             # Авторизация
             print(f"Авторизация как {self.from_email}...")
@@ -71,8 +71,8 @@ def main():
         file_path = 'C:\\Users\\chelovek\\Desktop\\run\\Отчет по посещаемости студентов.xlsx'
         to_email = "ph3u2@tohru.org"  # Почта учебной части
         subject = "Отчет о посещаемости ниже 65%"
-        from_email = "user@localhost"  # Замените на вашу учетную запись в hMailServer
-        from_password = "qazwsx123456789Qwqg"  # Замените на ваш пароль для этой учетной записи
+        from_email = "user@localhost"
+        from_password = "qazwsx123456789Qwqg"
 
         # Создаем объекты классов
         analyzer = AttendanceAnalyzer(file_path)

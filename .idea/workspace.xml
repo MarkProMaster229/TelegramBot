@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42058b1e-3fe5-4f16-9e28-b140b31dbad2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="42058b1e-3fe5-4f16-9e28-b140b31dbad2" name="Changes" comment="последний">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/AttendanceAnalyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/AttendanceAnalyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/StudentAnalyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/StudentAnalyzer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/TeacherNotifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/TeacherNotifier.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Scripts/TopicCheck.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/TopicCheck.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.venv/Scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/personalaccount.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/personalaccount.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,12 +26,32 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="финальная-ветка" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MarkProMaster229&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/MarkProMaster229/TelegramBot.git&quot;,
+    &quot;accountId&quot;: &quot;a8301cf8-8550-4ba6-a026-b018374a120f&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/.venv/Scripts/AttendanceAnalyzer.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/.venv/Scripts/StudentAnalyzer.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/Scripts/TeacherNotifier.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/.venv/Scripts/TopicCheck.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/.venv/Scripts/main.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/.venv/Scripts/personalaccount.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
@@ -38,28 +61,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.AttendanceAnalyzer.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TeacherNotifier.executor&quot;: &quot;Run&quot;,
-    &quot;Python.TopicCheck.executor&quot;: &quot;Run&quot;,
-    &quot;Python.chekingListTema.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.personalaccount.executor&quot;: &quot;Run&quot;,
-    &quot;Python.python check_columns.executor&quot;: &quot;Run&quot;,
-    &quot;Python.studentsGrups.executor&quot;: &quot;Run&quot;,
-    &quot;Python.topic_check.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;my-fin&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.AttendanceAnalyzer.executor": "Run",
+    "Python.TeacherNotifier.executor": "Run",
+    "Python.TopicCheck.executor": "Run",
+    "Python.chekingListTema.executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.personalaccount.executor": "Run",
+    "Python.python check_columns.executor": "Run",
+    "Python.studentsGrups.executor": "Run",
+    "Python.topic_check.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "финальная-ветка(исправление__багов__важно)",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;Python&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "Python"
     ]
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RunManager" selected="Python.main">
     <configuration name="TopicCheck" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="myproekt" />
       <option name="ENV_FILES" value="" />
@@ -127,6 +150,19 @@
       <option name="presentableId" value="Default" />
       <updated>1734607151982</updated>
     </task>
+    <task id="LOCAL-00001" summary="последний">
+      <option name="closed" value="true" />
+      <created>1737757932153</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1737757932153</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="последний" />
+    <option name="LAST_COMMIT_MESSAGE" value="последний" />
   </component>
 </project>

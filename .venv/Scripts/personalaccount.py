@@ -2,21 +2,19 @@ import pandas as pd
 
 class personalaccount:
     def __init__(self):
-        # Укажите путь к вашему Excel файлу
         self.file_path = 'C:\\Users\\chelovek\\Desktop\\run\\Отчет по домашним заданиям.xlsx'
 
     def admin(self):
         """
-        Возвращает список уникальных преподавателей из столбца 'ФИО преподавателя'.
+        Возвращает список уникальных преподавателей из столбца ФИО преподавателя.
         """
-        # Загружаем данные из Excel файла
         read = pd.read_excel(self.file_path)
 
         # Проверяем наличие нужного столбца
         if 'ФИО преподавателя' not in read.columns:
             raise ValueError("Столбец 'ФИО преподавателя' не найден в файле.")
 
-        # Получаем уникальные значения ФИО преподавателей, исключая пустые значения
+        # Получаем уникальные значения ФИО преподавателей исключая пустые значения
         difficult = read['ФИО преподавателя'].dropna().unique()
 
         # Преобразуем значения в строки
@@ -35,7 +33,7 @@ class personalaccount:
         if 'Unnamed: 5' not in read.columns:
             raise ValueError("Столбец 'Кол-во пар' не найден в файле.")
 
-        # Получаем данные из столбца "Кол-во пар"
+        # Получаем данные из столбца Кол-во пар
         pairs = read['Unnamed: 5'].dropna().unique()
 
         # Преобразуем значения в строки
@@ -44,10 +42,7 @@ class personalaccount:
         return pairs
 
     def parsplan(self):
-        """
-        Возвращает список уникальных значений из столбца 'Unnamed: 6' (План).
-        """
-        # Загружаем данные из Excel файла
+
         read = pd.read_excel(self.file_path)
 
         # Проверяем наличие столбца
@@ -63,10 +58,7 @@ class personalaccount:
         return pairsPlan
 
     def calculate_assignment_issuance(self):
-        """
-        Анализирует выдачу заданий и возвращает список преподавателей, у которых процент выдачи
-        заданий (выдано / план) меньше 70%.
-        """
+
         try:
             # Загружаем данные из Excel файла
             data = pd.read_excel(self.file_path)
@@ -77,8 +69,8 @@ class personalaccount:
 
             # Очистка данных
             data = data.dropna(subset=['ФИО преподавателя'])  # Удаляем строки без ФИО
-            data['Unnamed: 3'] = pd.to_numeric(data['Unnamed: 3'], errors='coerce').fillna(0)  # Преобразуем в числа
-            data['Unnamed: 6'] = pd.to_numeric(data['Unnamed: 6'], errors='coerce').fillna(0)  # Преобразуем в числа
+            data['Unnamed: 3'] = pd.to_numeric(data['Unnamed: 3'], errors='coerce').fillna(0)
+            data['Unnamed: 6'] = pd.to_numeric(data['Unnamed: 6'], errors='coerce').fillna(0)
 
             # Список преподавателей с низким процентом выдачи заданий
             low_assignment_percentage = []
@@ -99,17 +91,15 @@ class personalaccount:
             raise Exception(f"Ошибка при анализе выдачи заданий: {str(e)}")
 
     def get_teachers_not_sending_assignments(self):
-        """
-        Возвращает список преподавателей, которые не отправляют задания (план равен 0).
-        """
-        # Загружаем данные из Excel
+
+
         read = pd.read_excel(self.file_path)
 
         # Проверяем наличие нужных столбцов
         if 'ФИО преподавателя' not in read.columns or 'Unnamed: 3' not in read.columns or 'Unnamed: 6' not in read.columns:
             raise ValueError("Отсутствуют нужные столбцы в файле.")
 
-        # Получаем преподавателей, у которых план равен 0
+        # Получаем преподавателей у которых план равен 0
         teachers_not_sending_assignments = read[read['Unnamed: 6'] == 0]['ФИО преподавателя'].dropna().unique()
 
         return teachers_not_sending_assignments

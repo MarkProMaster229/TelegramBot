@@ -63,8 +63,8 @@ def mainRealization():
 
             for i in range(len(teacher_names)):
                 teacher = teacher_names[i]
-                provereno = provereno_значение[i]  # правильная переменная
-                plan = plane_значение[i]  # правильная переменная
+                provereno = provereno_значение[i]
+                plan = plane_значение[i]
 
                 if plan > 0:
                     percentage = (provereno / plan) * 100
@@ -153,7 +153,7 @@ def mainRealization():
         except Exception as e:
             chatBot.bot.send_message(message.chat.id, f"Ошибка: {str(e)}")
 
-    # Команда для рассылки уведомлений преподавателям
+    #рассылка уведомлений преподавателям
     @chatBot.bot.message_handler(commands=['notify'])
     def notify_teachers_command(message):
         global teachers_with_low_percentage
@@ -210,106 +210,23 @@ def mainRealization():
         except Exception as e:
             chatBot.bot.send_message(message.chat.id, f"Ошибка при отправке уведомлений: {str(e)}")
 
-    def otpravka():
-        try:
-            # Параметры
-            file_path = 'C:\\Users\\chelovek\\Desktop\\run\\Отчет по посещаемости студентов.xlsx'
-            to_email = "romtomgmai@gmail.com"  # Почта учебной части
-            subject = "Отчет о низкой посещаемости групп"
-            from_email = "your_email@example.com"  # Почта отправителя
-            from_password = "your_password"  # Пароль отправителя
-
-            # Создание объектов
-            analyzer = AttendanceAnalyzer(file_path)
-            email_sender = EmailSender(from_email, from_password)
-
-            # Анализ посещаемости
-            low_attendance = analyzer.analyze()
-
-            if low_attendance.empty:
-                print("Все группы имеют посещаемость выше установленного порога.")
-                return
-
-            # Формирование текста сообщения
-            message_body = "Группы с низкой посещаемостью:\n\n"
-            for _, row in low_attendance.iterrows():
-                message_body += (
-                    f"Преподаватель: {row['ФИО преподавателя']}\n"
-                    f"Группа: {row['Группа']}\n"
-                    f"Процент посещаемости: {row['Процент посещаемости']}%\n\n"
-                )
-
-            # Отправка сообщения
-            email_sender.send_email(to_email, subject, message_body)
-
-        except Exception as e:
-            print(f"Ошибка: {e}")
 
     # Команда для анализа студентов
     @chatBot.bot.message_handler(commands=['analyze_students'])
     def analyze_students(message):
-        try:
-            # Путь к отчету
-            file_path = 'C:\\Users\\chelovek\\Desktop\\run\\Отчет по студентам.xlsx'
-            analyzer = StudentAnalyzer(file_path)
+        fille_patch = 'C:\\Users\\chelovek\\Desktop\\run\\Отчет по студентам.xlsx'
+        analyze = StudentAnalyzer(fille_patch)
+        count = analyze.analiz()
 
-            # Загрузка данных
-            analyzer.load_data()
+        if count == 0:
+            chatBot.bot.send_message(message.chat.id, "Произошла ошибка при анализе данных.")
+        else:
+            # Преобразуем словарь в строку для отображения в сообщении
+            student_data = '\n'.join([f"{fio}: {score}" for fio, score in analyze.studentSlowar.items()])
 
-            # Конвертируем оценки в 5-балльную систему
-            analyzer.convert_to_5_scale()
-
-            # Анализируем данные
-            low_grade_students = analyzer.analyze_grades()
-
-            # Разделяем студентов на две группы
-            students_with_zero_grades = low_grade_students[low_grade_students['Average score'] == 0]
-            students_with_low_grades = low_grade_students[
-                (low_grade_students['Average score'] > 0) & (low_grade_students['Average score'] <= 3)
-                ]
-
-            # Формируем сообщения
-            response_parts = []
-
-            if not students_with_low_grades.empty:
-                part = "Студенты с низким средним баллом (меньше 3):\n"
-                part += "\n".join(
-                    f"{row['FIO']}: {row['Average score']:.2f}"
-                    for _, row in students_with_low_grades.iterrows()
-                )
-                response_parts.append(part)
-
-            if not students_with_zero_grades.empty:
-                part = "Студенты с нулевым средним баллом (у этих студентов ноль):\n"
-                part += "\n".join(
-                    f"{row['FIO']}: {row['Average score']:.2f}"
-                    for _, row in students_with_zero_grades.iterrows()
-                )
-                response_parts.append(part)
-
-            # Если ни одна из групп не заполнена
-            if not response_parts:
-                chatBot.bot.send_message(message.chat.id, "У всех студентов средний балл выше или равен 3.")
-                return
-
-            # Отправка ответа частями, если он слишком длинный
-            for part in response_parts:
-                while len(part) > 4096:
-                    # Обрезаем сообщение до 4096 символов
-                    chunk = part[:4096]
-                    part = part[4096:]
-                    chatBot.bot.send_message(message.chat.id, chunk)
-
-                # Отправляем оставшуюся часть
-                chatBot.bot.send_message(message.chat.id, part)
-
-        except FileNotFoundError:
-            chatBot.bot.send_message(message.chat.id, "Файл с отчетом не найден. Проверьте путь к файлу.")
-        except KeyError as e:
-            chatBot.bot.send_message(message.chat.id, f"Ошибка: отсутствует столбец {str(e)} в отчете.")
-        except Exception as e:
-            chatBot.bot.send_message(message.chat.id, f"Ошибка: {str(e)}")
-
+            # Отправляем пользователю количество студентов и их данные
+            chatBot.bot.send_message(message.chat.id,
+                                     f"Количество студентов с оценкой ниже 4: {count}\n\nСтуденты:\n{student_data}")
 
     # Начинаем работу бота
     chatBot.bot.polling(none_stop=True)
