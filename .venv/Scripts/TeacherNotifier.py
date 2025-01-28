@@ -21,7 +21,7 @@ class TeacherNotifier:
                 telegram_id = self.teachers[name]
                 message = (
                     f"Уважаемый(ая) {name}, у вас процент проверки домашних заданий: {percentage:.2f}%. "
-                    f"Просьба проверить больше домашних заданий, так как процент ниже 75%."
+                    f"Просьба проверить больше домашних заданий, так как процент ниже 70%."
                 )
                 self.bot.send_message(telegram_id, message)
             else:
