@@ -186,7 +186,7 @@ def mainRealization():
 
                     if plan > 0:
                         percentage = (provereno / plan) * 100
-                        if percentage < 75:
+                        if percentage < 70:
                             teachers_with_low_percentage.append((teacher, percentage))
 
             # Если после анализа список все еще пуст
