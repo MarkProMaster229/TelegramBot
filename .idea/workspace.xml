@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="42058b1e-3fe5-4f16-9e28-b140b31dbad2" name="Changes" comment="исправление_багов">
+    <list default="true" id="42058b1e-3fe5-4f16-9e28-b140b31dbad2" name="Changes" comment="исправление_баговMain">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.venv/Scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.venv/Scripts/TeacherNotifier.py" beforeDir="false" afterPath="$PROJECT_DIR$/.venv/Scripts/TeacherNotifier.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,27 +56,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.AttendanceAnalyzer.executor": "Run",
-    "Python.TeacherNotifier.executor": "Run",
-    "Python.TopicCheck.executor": "Run",
-    "Python.chekingListTema.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.personalaccount.executor": "Run",
-    "Python.python check_columns.executor": "Run",
-    "Python.studentsGrups.executor": "Run",
-    "Python.topic_check.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "финальная-ветка2(исправление__багов__важно2)",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.AttendanceAnalyzer.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TeacherNotifier.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TopicCheck.executor&quot;: &quot;Run&quot;,
+    &quot;Python.chekingListTema.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.personalaccount.executor&quot;: &quot;Run&quot;,
+    &quot;Python.python check_columns.executor&quot;: &quot;Run&quot;,
+    &quot;Python.studentsGrups.executor&quot;: &quot;Run&quot;,
+    &quot;Python.topic_check.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;финальная-ветка2(исправление__багов__важно2)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "Python"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;Python&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\chelovek\Desktop\myproekt" />
@@ -166,12 +166,29 @@
       <option name="project" value="LOCAL" />
       <updated>1738003041419</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="исправление_баговMain">
+      <option name="closed" value="true" />
+      <created>1738006446077</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738006446077</updated>
+    </task>
+    <task id="LOCAL-00004" summary="исправление_баговMain">
+      <option name="closed" value="true" />
+      <created>1738006462551</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1738006462551</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="последний" />
     <MESSAGE value="исправление_багов" />
-    <option name="LAST_COMMIT_MESSAGE" value="исправление_багов" />
+    <MESSAGE value="исправление_баговMain" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправление_баговMain" />
   </component>
 </project>
